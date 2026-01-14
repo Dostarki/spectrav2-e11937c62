@@ -26,6 +26,14 @@ class RadrService {
     }
 
     // Generate Unsigned Deposit Transaction
+    static async registerUser(walletAddress) {
+        if (!isInitialized) await this.init();
+        console.log(`Registering user via Radr: ${walletAddress}`);
+        // Gerçek bir API çağrısı gerekiyorsa buraya ekleyin.
+        // Şimdilik mock bir key veya SDK'dan dönen bir değer döndürebiliriz.
+        return `radr_key_${walletAddress}_${Date.now()}`;
+    }
+
     static async createDepositTx(walletAddress, amountSOL) {
         if (!isInitialized) await this.init();
         
